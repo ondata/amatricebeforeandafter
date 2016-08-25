@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-    <title>Confronto Regione Sicilian - RealVista1.0 TILE OPEN</title>
+    <title>24 august italian earthquake - Amatrice town before and after</title>
     <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
 
     <style type="text/css">
@@ -31,14 +31,14 @@
 
 
     var prima = L.tileLayer("./data/{z}/{x}/{y}.png", {
-        attribution: "Regione Siciliana Assessorato Territorio e Ambiente",
+        attribution: "©European Space Imaging / Digital Globe – Courtesy of Planetek Italia s.r.l",
         minZoom: 13,
         maxZoom: 17,
         tms: true
     });
     
 
-    var realvista = L.tileLayer.wms("http://213.215.135.196/reflector/open/service?", {
+    var dopo = L.tileLayer.wms("http://213.215.135.196/reflector/open/service?", {
         layers: 'rv1',
         format: 'image/jpeg',
         attribution: "RealVista1.0 e-GEOS SpA | &copy; OpenStreetMap contributors",
@@ -49,7 +49,7 @@
 
 
     var map1 = L.map('map1', {
-        layers: [prima],
+        layers: [dopo],
         center: center,
         zoom: zoom,
         minZoom: 13,
@@ -59,7 +59,7 @@
 
 
     var map2 = L.map('map2', {
-        layers: [realvista],
+        layers: [prima],
         center: center,
         zoom: zoom,
         minZoom: 13,
